@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { fetchEpisodes } from '@/lib/rss'
 import Polaroid from '@/components/Polaroid'
 import AnimatedWords from '@/components/AnimatedWords'
-import HeroButtons from "@/components/HeroButtons"
 
 // Use League Gothic with next/font (no CSS @import needed)
 import { League_Gothic } from 'next/font/google'
