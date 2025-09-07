@@ -24,7 +24,7 @@ export default async function Home() {
         {/* full-bleed wrapper */}
         <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-teal-400">
           {/* content container */}
-          <div className="h-[85vh] flex items-center justify-center px-6">
+          <div className="h-[95vh] flex items-center justify-center px-6">
             <div className="flex flex-col items-center justify-center text-center">
               {/* Title */}
               <h1 className="mb-8 font-extrabold tracking-tight">
