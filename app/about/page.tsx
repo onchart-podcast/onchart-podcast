@@ -91,17 +91,16 @@ export default function AboutPage() {
               <p className="font-serif italic text-base md:text-lg leading-relaxed text-neutral-900">
                 We’re three friends who love medicine, stories, and honest
                 conversations about the human connection. As pre-medical students, 
-                we often find ourselves captivated by the magic of medicine in clinical 
-                places where we see healthcare providers in action with the tools and machines 
-                that help sustain and extend life, and witness the connections forged between patients
-                and their caregivers. But, after each shadowing experience, we often find ourselves 
-                searching for the deeper meaning of each connection we bore witness to: what does it 
-                truly take to care for someone's wellbeing?
+                we've grown captivated by the magic of medicine in clinical 
+                places where we saw healthcare providers in action with the tools and machines 
+                that help sustain and extend life, and witnessed the connections forged between patients
+                and their caregivers. But, after each shadowing experience, we often found ourselves 
+                asking the fundamental question: what does it truly take to care for someone's wellbeing?
               </p>
               <p className="font-serif italic text-base md:text-lg leading-relaxed text-neutral-900 mt-6">
                 In the summer of 2023, we founded the ON Chart podcast as a way to explore this question.
                 Our show brings voices from diverse healthcare providers who not only excel in their craft
-                but also show their passions beyond medicine to enrich the way they give care to patients.
+                but also incorporate avocations into the way they give care to patients.
                 Thanks for being here—we hope you’ll listen and stay in touch.
 
 
@@ -203,7 +202,7 @@ export default function AboutPage() {
               img="/polaroids/le.jpg"
               imgAlt="Le Nguyen"
               imgPos="object-[center_18%]"
-              bio="Le graduated from the George Washington University with a Bachelor of Science in Neuroscience. He has been to many places including Vietnam, Thailand, Louisiana, Minnesota, Colorado, California, and Virginia, where he currently lives with his family. He loves petting his cat while she’s asleep and making quirky sounds with his mouth when he’s alone."
+              bio="Le graduated from the George Washington University with a Bachelor of Science in Neuroscience. He has been to many places including Vietnam, Thailand, Louisiana, Minnesota, Colorado, California, Massachusetts, and Virginia, where he lives with his family. He loves petting his cat while she’s asleep and making quirky sounds with his mouth when he’s alone."
               favoriteUrl="https://open.spotify.com/episode/05sH9w096fN4CefGoRbePc"
             />
           </div>
