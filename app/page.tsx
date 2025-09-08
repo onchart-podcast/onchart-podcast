@@ -158,7 +158,7 @@ export default async function Home() {
               <p className="font-serif italic text-base md:text-lg leading-relaxed text-neutral-900 mt-6">
                 In the summer of 2023, we founded the ON Chart podcast as a way to explore this question.
                 Our show brings voices from diverse healthcare providers who not only excel in their craft
-                but also incorporate avocations into the way they give care to patients.
+                but also incorporate their avocations into patient care.
                 Thanks for being here—we hope you’ll listen and stay in touch.
 
               </p>
