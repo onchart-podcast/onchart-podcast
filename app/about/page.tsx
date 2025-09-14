@@ -95,7 +95,7 @@ export default function AboutPage() {
                 places where we saw healthcare providers in action with the tools and machines 
                 that help sustain and extend life, and witnessed the connections forged between patients
                 and their caregivers. But, after each shadowing experience, we often found ourselves 
-                asking the fundamental question: what does it truly take to care for someone's wellbeing?
+                asking a fundamental question: what does it truly take to care for someone's wellbeing?
               </p>
               <p className="font-serif italic text-base md:text-lg leading-relaxed text-neutral-900 mt-6">
                 In the summer of 2023, we founded the ON Chart podcast as a way to explore this question.
