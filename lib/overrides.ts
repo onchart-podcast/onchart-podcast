@@ -15,7 +15,8 @@ export const episodeImageOverride: Record<string, string> = {
    'a7b65795-4287-4ae0-9d4c-eee82720648f': '/episode_images/jordan.png',
    '8c3c167e-ff84-48a5-9e45-16cc2d5adda9': '/episode_images/juliet.png',
    'afaf203a-3072-4c3e-8354-cff04393386e': '/episode_images/tummala.png',
-   'd2812b5a-b339-4501-b8a3-3a4c6005e8e9': '/episode_images/alex.png'
+   'd2812b5a-b339-4501-b8a3-3a4c6005e8e9': '/episode_images/alex.png',
+   '71290ebc-0438-4a87-b579-3f2cdddcefb3':'/episode_images/sean.png',
 
 
 };
@@ -65,5 +66,8 @@ export const episodeLinkOverride: Record<string, string> = {
   'afaf203a-3072-4c3e-8354-cff04393386e': 'https://open.spotify.com/episode/6Pqk7B5wok8Qj054jy08eD',
 
   // Alex
-  'd2812b5a-b339-4501-b8a3-3a4c6005e8e9': 'https://open.spotify.com/episode/0MqmSDluV5CCIK66EF6Zc4'
+  'd2812b5a-b339-4501-b8a3-3a4c6005e8e9': 'https://open.spotify.com/episode/0MqmSDluV5CCIK66EF6Zc4',
+  
+  // Seanv
+  '71290ebc-0438-4a87-b579-3f2cdddcefb3': 'https://open.spotify.com/episode/0y5IoE1OFK23wziKhCVVDM',
 };
