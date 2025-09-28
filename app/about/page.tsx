@@ -192,7 +192,7 @@ export default function AboutPage() {
               imgAlt="Tremayne Ansani"
               imgPos="object-[center_18%]"
               bio="TBD"
-              favoriteUrl={process.env.SPOTIFY_SHOW_URL}
+              favoriteUrl="https://open.spotify.com/episode/50qcor6GaHslUYyyE8KERb"
             />
 
             <TeamCard
