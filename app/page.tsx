@@ -105,9 +105,11 @@ export default async function Home() {
 
               {/* Actions */}
               <div className="flex flex-wrap gap-4">
-                {featured.audioUrl && (
+                {featured.spotifyUrl && (
                   <a
-                    href={featured.audioUrl}
+                    href={featured.spotifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-5 py-2.5 rounded-xl bg-white text-black font-semibold shadow hover:opacity-90"
                   >
                     Listen
