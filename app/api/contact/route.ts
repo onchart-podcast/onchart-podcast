@@ -1,36 +1,42 @@
-import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
 
-export const runtime = "nodejs"; // <-- ADD THIS
+export async function POST(request: Request) {
+  // 👇 This matches a normal HTML form post
+  const form = await request.formData()
+  const name = String(form.get('name') || '')
+  const email = String(form.get('email') || '')
+  const message = String(form.get('message') || '')
 
-export async function POST(req: Request) {
+  if (!name || !email || !message) {
+    return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+  }
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  })
+
   try {
-    const { name, email, message } = await req.json();
-
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
-    }
-
-    // Transporter using Gmail
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
-      },
-    });
-
-    // Send the email
     await transporter.sendMail({
-      from: `"ON Chart Contact" <${process.env.GMAIL_USER}>`,
-      to: "beonguyen2005@gmail.com",
+      from: process.env.GMAIL_USER,
+      replyTo: email,
+      to: process.env.GMAIL_USER,
       subject: `New message from ${name}`,
-      text: `From: ${name} (${email})\n\n${message}`,
-    });
+      text: message,
+    })
 
-    return NextResponse.json({ ok: true });
+    // Option 1: JSON response (page will show raw JSON unless you handle it)
+    // return NextResponse.json({ ok: true })
+
+    // Option 2: PRG pattern – redirect back with a flag
+    return NextResponse.redirect(new URL('/contact?sent=1', request.url))
   } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    console.error(err)
+    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
   }
 }
+
