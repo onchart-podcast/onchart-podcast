@@ -336,7 +336,7 @@ export default function ContactPage() {
 
               {/* Row 4: CV / LinkedIn */}
               <div>
-                <label className="block text-sm font-medium mb-2">Link to CV/LinkedIn</label>
+                <label className="block text-sm font-medium mb-2">Link to LinkedIn</label>
                 <input
                   name="cvLink"
                   type="url"
@@ -348,7 +348,7 @@ export default function ContactPage() {
               {/* Row 5: File upload */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  File upload <span className="text-rose-600">*</span>
+                  CV File upload <span className="text-rose-600">*</span>
                 </label>
                 <input
                   name="resume"
