@@ -39,7 +39,7 @@ export default function ContactPage() {
         <div className="p-6 bg-green-50 border border-green-200 rounded-xl text-center">
           <h2 className="text-2xl font-semibold text-green-700 mb-2">Thank you!</h2>
           <p className="text-green-600">
-            We sincerely appreciate your message and interest in our podcast. Someone from our team will get back to you soon.
+            We sincerely appreciate your message and interest in our podcast. Someone on our team will get back to you soon.
           </p>
           <button
             onClick={() => setSent(false)}
