@@ -166,7 +166,7 @@ export default function AboutPage() {
       </section>
 
       {/* ========== Individual bios grid ========== */}
-      <section className="relative px-6 mt-4">
+      <section id="our-team" className="relative px-6 mt-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
             Our Team

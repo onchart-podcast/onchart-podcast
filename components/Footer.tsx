@@ -1,72 +1,116 @@
 import Link from 'next/link'
+import { Instagram, Linkedin } from 'lucide-react'
 
-export default function Footer(){
+export default function Footer() {
   return (
-    <footer className="mt-16 border-t">
-      <div className="container grid gap-6 py-8 sm:grid-cols-3 text-sm text-neutral-600">
-        <div>
-          <p className="font-semibold">Subscribe</p>
-          <div className="mt-2 flex flex-wrap gap-2">
+    <footer className="mt-16 border-t bg-neutral-50/80 text-neutral-700">
+      {/* Top grid */}
+      <div className="mx-auto max-w-7xl px-6 py-12 md:py-16 grid gap-10 md:grid-cols-12 items-start">
+        {/* Brand + socials */}
+        <div className="md:col-span-4">
+          <div className="text-4xl font-black leading-none tracking-tight">
+            <div>ON Chart</div>
+            <div>Podcast</div>
+          </div>
+
+          <hr className="my-6 border-neutral-300" />
+
+          <div className="flex items-center gap-4">
             <a
-              className="btn btn-primary"
-              href={process.env.SPOTIFY_SHOW_URL || '#'}
+              href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || '#'}
               target="_blank"
               rel="noreferrer"
+              aria-label="Instagram"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 transition"
             >
-              Spotify
+              <Instagram className="h-5 w-5" />
             </a>
             <a
-              className="btn border"
-              href={process.env.APPLE_PODCAST_URL || '#'}
+              href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '#'}
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 transition"
             >
-              Apple
-            </a>
-            <a
-              className="btn border"
-              href={process.env.YOUTUBE_URL || '#'}
-              target="_blank"
-              rel="noreferrer"
-            >
-              YouTube
-            </a>
-            <a
-              className="btn border"
-              href={process.env.PODCAST_RSS ? '/rss.xml' : '#'}
-              target="_blank"
-              rel="noreferrer"
-            >
-              RSS
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
         </div>
 
-        <div>
-          <p className="font-semibold">About</p>
-          <ul className="mt-2 space-y-1">
-            <li><Link href="/about">Our Mission</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/press">Press Kit</Link></li>
+        {/* Pages */}
+        <div className="md:col-span-3">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-neutral-900">Pages</h3>
+          <div className="mt-2 h-[2px] w-12 bg-neutral-200" />
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><Link href="/" className="hover:text-neutral-900">Home</Link></li>
+            <li><Link href="/episodes" className="hover:text-neutral-900">Episodes</Link></li>
+            <li><Link href="/newsletter" className="hover:text-neutral-900">Newsletter</Link></li>
           </ul>
         </div>
 
-        <div>
-          <p className="font-semibold">Newsletter</p>
-          <form action="/api/subscribe" method="post" className="mt-2 flex gap-2">
-            <input
-              name="email"
-              type="email"
-              required
-              placeholder="you@example.com"
-              className="w-full rounded border px-3 py-2"
-            />
-            <button className="btn btn-primary">Join</button>
-          </form>
-          <p className="mt-2 text-xs">We’ll only email when there’s a new episode.</p>
+        {/* Subscribe (text links, aligned like other columns) */}
+        <div className="md:col-span-3">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-neutral-900">Subscribe</h3>
+          <div className="mt-2 h-[2px] w-12 bg-neutral-200" />
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <a
+                href={process.env.SPOTIFY_SHOW_URL || '#'}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-neutral-900"
+              >
+                Spotify
+              </a>
+            </li>
+            <li>
+              <a
+                href={process.env.APPLE_PODCAST_URL || '#'}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-neutral-900"
+              >
+                Apple Podcast
+              </a>
+            </li>
+            <li>
+              <a
+                href={process.env.YOUTUBE_URL || '#'}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-neutral-900"
+              >
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* About */}
+        <div className="md:col-span-2">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-neutral-900">About</h3>
+          <div className="mt-2 h-[2px] w-12 bg-neutral-200" />
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><Link href="/about#mission" className="hover:text-neutral-900">Our Mission</Link></li>
+            <li><Link href="/about#our-team" className="hover:text-neutral-900">Our Team</Link></li>
+            <li><Link href="/contact" className="hover:text-neutral-900">Contact</Link></li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t bg-white/70">
+        <div className="mx-auto max-w-7xl px-6 py-4 text-xs md:text-sm text-neutral-500 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p>© {new Date().getFullYear()} ON Chart Podcast. All rights reserved.</p>
+          <nav className="flex flex-wrap items-center gap-4">
+            <Link href="/privacy" className="hover:text-neutral-800">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-neutral-800">Terms of Use</Link>
+            <Link href="/contact" className="hover:text-neutral-800">Contact Us</Link>
+          </nav>
         </div>
       </div>
     </footer>
   )
 }
+
 

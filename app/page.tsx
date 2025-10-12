@@ -100,7 +100,19 @@ export default async function Home() {
 
               {/* Description */}
               <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-5xl">
-                {featured.description}
+                {featured.description
+                ?.replace(/Order\s+Somewhere\s+in\s+Between:.*?(?=\s[A-Z]|$)/gi, '') // remove promo line
+                .replace(/\bA\s*Memoir\s*here\b/gi, '')                              // remove "A Memoir here"
+                .replace(/\bLinks\b[\s\S]*$/i, '')                                  // everything after "Links"
+                .replace(/\([^)]*\)/g, '')                                          // remove (...) blocks entirely
+                .replace(/https?:\/\/\S+/g, '')                                     // remove URLs
+                .replace(/@\w+/g, '')                                               // remove @handles
+                .replace(/\b(?:Host|Hosts|Guest|Guests|Instagram|LinkedIn)\b.*?(?=[A-Z]|$)/gi, '') // host/social tags
+                .replace(/\b(?:Le\s+Nguyen|Tremayne\s+Ansani|Sean\s+Pirkle)\b/gi, '') // remove name
+                .replace(/\s{2,}/g, ' ')                                            // collapse spaces
+                .replace(/\s+\./g, '.')                                             // fix extra spaces before periods
+                .trim()
+                }
               </p>
 
               {/* Actions */}
