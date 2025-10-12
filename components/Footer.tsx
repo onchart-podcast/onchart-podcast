@@ -1,9 +1,5 @@
 import Link from 'next/link'
-import {
-  Instagram,
-  Linkedin,
-  Facebook,
-} from 'lucide-react'
+import { Instagram, Linkedin, Facebook } from 'lucide-react'
 import { FaXTwitter } from 'react-icons/fa6'
 import { SiTiktok, SiSubstack } from 'react-icons/si'
 
@@ -21,7 +17,7 @@ export default function Footer() {
 
           <hr className="my-6 border-neutral-300" />
 
-          {/* Social Icons (now true brand marks) */}
+          {/* Social Icons */}
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || '#'}
@@ -63,8 +59,9 @@ export default function Footer() {
               <Facebook className="h-5 w-5" />
             </a>
 
+            {/* FIX: Substack icon links to external Substack again */}
             <a
-              href={process.env.NEXT_PUBLIC_SUBSTACK_URL || '#'}
+              href={process.env.NEXT_PUBLIC_SUBSTACK_URL || 'https://onchartpodcast.substack.com'}
               target="_blank"
               rel="noreferrer"
               aria-label="Substack"
@@ -92,7 +89,8 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/" className="hover:text-neutral-900">Home</Link></li>
             <li><Link href="/episodes" className="hover:text-neutral-900">Episodes</Link></li>
-            <li><Link href="/newsletter" className="hover:text-neutral-900">Newsletter</Link></li>
+            {/* Stays anchored to the on-page form */}
+            <li><Link href="/contact#newsletter" className="hover:text-neutral-900" prefetch={false}>Newsletter</Link></li>
           </ul>
         </div>
 
