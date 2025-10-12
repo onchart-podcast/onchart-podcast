@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { Instagram, Linkedin } from 'lucide-react'
+import {
+  Instagram,
+  Linkedin,
+  Facebook,
+} from 'lucide-react'
+import { FaXTwitter } from 'react-icons/fa6'
+import { SiTiktok, SiSubstack } from 'react-icons/si'
 
 export default function Footer() {
   return (
@@ -15,7 +21,8 @@ export default function Footer() {
 
           <hr className="my-6 border-neutral-300" />
 
-          <div className="flex items-center gap-4">
+          {/* Social Icons (now true brand marks) */}
+          <div className="flex flex-wrap items-center gap-3">
             <a
               href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || '#'}
               target="_blank"
@@ -25,6 +32,7 @@ export default function Footer() {
             >
               <Instagram className="h-5 w-5" />
             </a>
+
             <a
               href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '#'}
               target="_blank"
@@ -33,6 +41,46 @@ export default function Footer() {
               className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 transition"
             >
               <Linkedin className="h-5 w-5" />
+            </a>
+
+            <a
+              href={process.env.NEXT_PUBLIC_X_URL || '#'}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="X (Twitter)"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 transition"
+            >
+              <FaXTwitter className="h-5 w-5" />
+            </a>
+
+            <a
+              href={process.env.NEXT_PUBLIC_FACEBOOK_URL || '#'}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 transition"
+            >
+              <Facebook className="h-5 w-5" />
+            </a>
+
+            <a
+              href={process.env.NEXT_PUBLIC_SUBSTACK_URL || '#'}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Substack"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 transition"
+            >
+              <SiSubstack className="h-5 w-5" />
+            </a>
+
+            <a
+              href={process.env.NEXT_PUBLIC_TIKTOK_URL || '#'}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-300 bg-white hover:bg-neutral-100 transition"
+            >
+              <SiTiktok className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -48,38 +96,23 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Subscribe (text links, aligned like other columns) */}
+        {/* Subscribe */}
         <div className="md:col-span-3">
           <h3 className="text-sm font-bold uppercase tracking-wide text-neutral-900">Subscribe</h3>
           <div className="mt-2 h-[2px] w-12 bg-neutral-200" />
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <a
-                href={process.env.SPOTIFY_SHOW_URL || '#'}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-neutral-900"
-              >
+              <a href={process.env.SPOTIFY_SHOW_URL || '#'} target="_blank" rel="noreferrer" className="hover:text-neutral-900">
                 Spotify
               </a>
             </li>
             <li>
-              <a
-                href={process.env.APPLE_PODCAST_URL || '#'}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-neutral-900"
-              >
+              <a href={process.env.APPLE_PODCAST_URL || '#'} target="_blank" rel="noreferrer" className="hover:text-neutral-900">
                 Apple Podcast
               </a>
             </li>
             <li>
-              <a
-                href={process.env.YOUTUBE_URL || '#'}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-neutral-900"
-              >
+              <a href={process.env.YOUTUBE_URL || '#'} target="_blank" rel="noreferrer" className="hover:text-neutral-900">
                 YouTube
               </a>
             </li>
@@ -112,5 +145,3 @@ export default function Footer() {
     </footer>
   )
 }
-
-
