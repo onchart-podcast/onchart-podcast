@@ -29,7 +29,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={leagueGothic.variable}>
       <head>
-        {/* Google AdSense (global) */}
+        {/* Optional: AdSense meta tag (some accounts offer this alt verification) */}
+        <meta name="google-adsense-account" content="ca-pub-1755060196030370" />
+
+        {/* Google AdSense loader (global) */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1755060196030370"
