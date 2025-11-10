@@ -4,6 +4,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { League_Gothic } from 'next/font/google'
+import Script from 'next/script'
 
 const leagueGothic = League_Gothic({
   weight: '400',
@@ -27,6 +28,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={leagueGothic.variable}>
+      <head>
+        {/* Google AdSense (global) */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1755060196030370"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body>
         <Nav />
         <main className="container py-8">{children}</main>
