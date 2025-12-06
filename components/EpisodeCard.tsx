@@ -39,7 +39,7 @@ export default function EpisodeCard({ ep }: { ep: Episode }) {
   return (
     <article className="card group overflow-hidden">
       <Wrapper>
-        <div className="relative aspect-[16/9] bg-neutral-100">
+        <div className="relative aspect-square bg-neutral-100">
           <Image
             src={ep.image || '/hero.jpg'}
             alt={ep.title}
