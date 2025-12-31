@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { fetchEpisodes } from '@/lib/rss'
 import Polaroid from '@/components/Polaroid'
 import AnimatedWords from '@/components/AnimatedWords'
+import { getFeaturedPosts } from '@/lib/posts'
 
 // Use League Gothic with next/font (no CSS @import needed)
 import { League_Gothic } from 'next/font/google'
@@ -16,6 +17,7 @@ export default async function Home() {
   // Pull episodes (expects fields: id, title, description, date, audioUrl)
   const episodes = await fetchEpisodes().catch(() => [])
   const featured = Array.isArray(episodes) && episodes.length > 0 ? episodes[0] : null
+  const posts = await getFeaturedPosts(3)
 
   return (
     <div className="space-y-24">
@@ -234,6 +236,74 @@ export default async function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ======================= BLOG PREVIEW ======================= */}
+      <section className="px-6" aria-label="Field notes blog preview">
+        <div className="max-w-6xl mx-auto space-y-8 rounded-3xl bg-neutral-900 text-white px-8 py-10 shadow-xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-3">
+              <p className="text-sm font-semibold uppercase tracking-[0.4em] text-rose-300">
+                Blog
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold">
+                Field notes between episodes
+              </h2>
+              <p className="text-white/70 text-lg max-w-2xl">
+                We turn the most powerful episode takeaways into short playbooks: reflection
+                prompts, rituals, and creative exercises to use on campus, on the wards, or in your
+                community projects.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-neutral-900 font-semibold shadow-lg hover:shadow-rose-500/40"
+            >
+              Visit the blog <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          {posts.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-3">
+              {posts.map(post => (
+                <article
+                  key={post.slug}
+                  className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:border-white/30"
+                >
+                  <div className={`h-32 rounded-2xl bg-gradient-to-br ${post.cover}`} />
+                  <div className="mt-5 flex-1 space-y-3">
+                    <div className="flex items-center gap-2 text-xs tracking-wide text-white/60 uppercase">
+                      <time dateTime={post.date}>
+                        {new Date(post.date).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                        })}
+                      </time>
+                      <span aria-hidden>•</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold leading-snug">
+                      <Link href={`/blog/${post.slug}`} className="hover:underline">
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="text-sm text-white/80">{post.excerpt}</p>
+                  </div>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-rose-200"
+                  >
+                    Read post <span aria-hidden>→</span>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-white/20 p-6 text-white/80">
+              Add posts to <code className="font-mono">lib/posts.ts</code> to surface them here.
+            </div>
+          )}
         </div>
       </section>
     </div>

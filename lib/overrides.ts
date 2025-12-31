@@ -17,7 +17,8 @@ export const episodeImageOverride: Record<string, string> = {
    'afaf203a-3072-4c3e-8354-cff04393386e': '/episode_images/tummala.png',
    'd2812b5a-b339-4501-b8a3-3a4c6005e8e9': '/episode_images/alex.png',
    '71290ebc-0438-4a87-b579-3f2cdddcefb3':'/episode_images/sean.png',
-   '9983ba78-03a9-45df-a964-2d2bf63e9692': '/episode_images/lydia.png',
+   '9983ba78-03a9-45df-a964-2d2bf63e9692':'/episode_images/lydia.png',
+   '6b9789df-916a-4212-88a5-9c461f94fffd':'/episode_images/wes.png',
 
 };
 
@@ -73,4 +74,7 @@ export const episodeLinkOverride: Record<string, string> = {
 
   // Lydia
   '9983ba78-03a9-45df-a964-2d2bf63e9692': 'https://open.spotify.com/episode/5kUzBqqUJFitsJXLozUWan',
+
+  // Wes
+  '6b9789df-916a-4212-88a5-9c461f94fffd' : 'https://open.spotify.com/episode/6L2vbKWmISiejRSNVWXxTH?si=7681e39e4e274ef0',
 };
