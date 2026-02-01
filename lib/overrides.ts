@@ -19,6 +19,7 @@ export const episodeImageOverride: Record<string, string> = {
    '71290ebc-0438-4a87-b579-3f2cdddcefb3':'/episode_images/sean.png',
    '9983ba78-03a9-45df-a964-2d2bf63e9692':'/episode_images/lydia.png',
    '6b9789df-916a-4212-88a5-9c461f94fffd':'/episode_images/wes.png',
+   '18261d58-2cf9-4c72-97f7-cd102bf7da53': 'episode_images/gold.png'
 
 };
 
@@ -77,4 +78,7 @@ export const episodeLinkOverride: Record<string, string> = {
 
   // Wes
   '6b9789df-916a-4212-88a5-9c461f94fffd' : 'https://open.spotify.com/episode/6L2vbKWmISiejRSNVWXxTH?si=7681e39e4e274ef0',
+
+  //Gold 
+  '18261d58-2cf9-4c72-97f7-cd102bf7da53' : 'https://open.spotify.com/episode/6G5gtZLpWsbF708hJ4Q3vX?si=37HFw2Z_SF-kG-M441ASuQ'
 };
